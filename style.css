@@ -2,16 +2,25 @@ body {
     font-family: "Pridi", serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
+    background-color: #141414;
+}
+
+.social-header {
+    background-color: #141414;
 }
 
 header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 0;
+    background-color: #09349d;
+    color: #e6e6e6;
+    padding: 5px 0;
     text-align: center;
 }
-
+p{
+    color: #e6e6e6;
+}
+a {
+    color: white; 
+  }
 .profile-container {
     max-width: 600px;
     margin: 20px auto;
@@ -90,7 +99,7 @@ form input {
 
 
 .gradient-bg {
-    background: linear-gradient(0deg, rgb(8, 63, 191) 0%, rgb(8, 52, 155) 100%);
+    
     color: white;
     text-align: center;
 }
@@ -156,3 +165,15 @@ form input {
     font-weight: 700;
     font-style: normal;
   }
+ 
+/* Estilo para os ícones */
+.social-icon {
+    color: white; 
+    margin-right: 30px;
+    font-size: 20px; 
+    transition: color 0.3s; 
+}
+
+.social-icon:hover {
+    color: #ccc; 
+}

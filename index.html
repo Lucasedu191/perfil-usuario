@@ -11,82 +11,102 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pridi:wght@200;300;400;500;600;700&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body>
-    <header class="gradient-bg text-white text-center py-3">
-        <h1 id="user-name">Nome do Usuário</h1>
+    <header class="social-header text-white text-center py-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-md-left">
+                    <a href="https://api.whatsapp.com/send/?phone=554140638879&text&app_absent=0&lang=pt_br"
+                        target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i> (41) 4063-8879</a>
+                </div>
+                <div class="col-md-6 text-md-right">
+                    <a href="https://www.facebook.com/tdzain/" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/tdzain/" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/company/tdzain-marketing-digital/jobs/" class="social-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
     </header>
-    <div class="container-fluid vh-100 d-flex p-0">
-        <div class="col-md-5 d-flex flex-column justify-content-start gradient-bg p-3">
-            <div class="logo-container my-4">
-                <img src="https://tdzain.com/central/templates/lagom2/assets/img/logo/logo_big_inverse.2092193687.png"
-                    title="tdzain marketing e performance" alt="tdzain marketing e performance" class="logo ">
-            </div>
-        </div>
-        <div class="col-md-7 d-flex flex-column justify-content-center align-items-center p-4">
-            <div class="profile-info w-75">
-                <img class="rounded-circle img-fluid profile-img small-profile-img" id="profile-img"
-                    src="sua-imagem.jpg" alt="Imagem do perfil do usuário" data-toggle="modal"
-                    data-target="#profileModal">
-                <p><strong>Nome:</strong> <span id="user-name-info"></span></p>
-                <p><strong>Email:</strong> <span id="user-email"></span></p>
-                <p><strong>Telefone:</strong> <span id="user-phone"></span></p>
-            </div>
-            <button id="edit-btn" class="btn btn-primary btn-block mt-3" data-toggle="modal"
-                data-target="#editModal">Editar</button>
-        </div>
-    </div>
-    <!-- Modal imagem do perfil -->
-    <div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="profileModalLabel">Imagem do Perfil</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <img class="img-fluid" id="expanded-profile-img" src="" alt="Imagem do perfil do usuário">
+    <header class="text-center py-1">
+        <h1 id="user-name"></h1>
+    </header>
+    <div class="container content">
+        <div class="container vh-100 d-flex p-0">
+            <div class="col-md-5 d-flex flex-column justify-content-start gradient-bg p-3">
+                <div class="logo-container my-4">
+                    <img src="https://tdzain.com/central/templates/lagom2/assets/img/logo/logo_big_inverse.2092193687.png"
+                        title="tdzain marketing e performance" alt="tdzain marketing e performance" class="logo ">
                 </div>
             </div>
+            <div class="col-md-7 d-flex flex-column justify-content-center align-items-center p-4">
+                <div class="profile-info w-75">
+                    <img class="rounded-circle img-fluid profile-img small-profile-img" id="profile-img"
+                        src="sua-imagem.jpg" alt="Imagem do perfil do usuário" data-toggle="modal"
+                        data-target="#profileModal">
+                    <p><strong>Nome:</strong> <span id="user-name-info"></span></p>
+                    <p><strong>Email:</strong> <span id="user-email"></span></p>
+                    <p><strong>Telefone:</strong> <span id="user-phone"></span></p>
+                </div>
+                <button id="edit-btn" class="btn btn-primary btn-block mt-3" data-toggle="modal"
+                    data-target="#editModal">Editar</button>
+            </div>
         </div>
-    </div>
-    <!-- Modal de Edição -->
-    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="editModalLabel">Editar Perfil</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+        <!-- Modal imagem do perfil -->
+        <div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="profileModalLabel">Imagem do Perfil</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img class="img-fluid" id="expanded-profile-img" src="" alt="Imagem do perfil do usuário">
+                    </div>
                 </div>
-                <div class="modal-body">
-                    <form id="edit-form">
-                        <div class="form-group">
-                            <label for="name">Nome:</label>
-                            <input type="text" id="name" name="name" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email:</label>
-                            <input type="email" id="email" name="email" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Telefone:</label>
-                            <input type="tel" id="phone" name="phone" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label for="profileImg">URL da Imagem do Perfil:</label>
-                            <input type="text" id="profileImg" name="profileImg" class="form-control">
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    <button type="button" id="save-btn" class="btn btn-success">Salvar</button>
+            </div>
+        </div>
+        <!-- Modal de Edição -->
+        <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="editModalLabel">Editar Perfil</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="edit-form">
+                            <div class="form-group">
+                                <label for="name">Nome:</label>
+                                <input type="text" id="name" name="name" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email:</label>
+                                <input type="email" id="email" name="email" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Telefone:</label>
+                                <input type="tel" id="phone" name="phone" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="profileImg">URL da Imagem do Perfil:</label>
+                                <input type="text" id="profileImg" name="profileImg" class="form-control">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <button type="button" id="save-btn" class="btn btn-success">Salvar</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -96,6 +116,9 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"
+        integrity="sha384-rTRE+2u0WNqYaaEgzarB1yma6Csp2oK7Sxq+Qf2eZ/C1p72wZMfSNq6xFp8xJ6eW"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
