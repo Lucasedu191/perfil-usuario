@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de Usuário</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="bg-primary text-white text-center py-3">
+        <h1 id="user-name">Nome do Usuário</h1>
+    </header>
+    <main class="container mt-4">
+        <div class="row">
+            <div class="col-md-4 text-center">
+                <img id="profile-img" src="default-avatar.png" alt="Foto do Perfil" class="rounded-circle img-fluid">
+            </div>
+            <div class="col-md-8">
+                <div class="profile-info">
+                    <p><strong>Nome:</strong> <span id="user-name-info">John Doe</span></p>
+                    <p><strong>Email:</strong> <span id="user-email">john.doe@example.com</span></p>
+                    <p><strong>Telefone:</strong> <span id="user-phone">+1234567890</span></p>
+                </div>
+                <button id="edit-btn" class="btn btn-primary btn-block mt-3">Editar</button>
+                <form id="edit-form" class="hidden mt-3">
+                    <div class="form-group">
+                        <label for="name">Nome:</label>
+                        <input type="text" id="name" name="name" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Telefone:</label>
+                        <input type="tel" id="phone" name="phone" class="form-control">
+                    </div>
+                    <button type="button" id="save-btn" class="btn btn-success btn-block">Salvar</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
