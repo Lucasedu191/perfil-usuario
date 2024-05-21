@@ -7,42 +7,91 @@
     <title>Perfil de Usuário</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pridi:wght@200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-    <header class="bg-primary text-white text-center py-3">
+    <header class="gradient-bg text-white text-center py-3">
         <h1 id="user-name">Nome do Usuário</h1>
     </header>
-    <main class="container mt-4">
-        <div class="row">
-            <div class="col-md-4 text-center">
-                <img id="profile-img" src="default-avatar.png" alt="Foto do Perfil" class="rounded-circle img-fluid">
-            </div>
-            <div class="col-md-8">
-                <div class="profile-info">
-                    <p><strong>Nome:</strong> <span id="user-name-info">John Doe</span></p>
-                    <p><strong>Email:</strong> <span id="user-email">john.doe@example.com</span></p>
-                    <p><strong>Telefone:</strong> <span id="user-phone">+1234567890</span></p>
-                </div>
-                <button id="edit-btn" class="btn btn-primary btn-block mt-3">Editar</button>
-                <form id="edit-form" class="hidden mt-3">
-                    <div class="form-group">
-                        <label for="name">Nome:</label>
-                        <input type="text" id="name" name="name" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Telefone:</label>
-                        <input type="tel" id="phone" name="phone" class="form-control">
-                    </div>
-                    <button type="button" id="save-btn" class="btn btn-success btn-block">Salvar</button>
-                </form>
+    <div class="container-fluid vh-100 d-flex p-0">
+        <div class="col-md-5 d-flex flex-column justify-content-start gradient-bg p-3">
+            <div class="logo-container my-4">
+                <img src="https://tdzain.com/central/templates/lagom2/assets/img/logo/logo_big_inverse.2092193687.png"
+                    title="tdzain marketing e performance" alt="tdzain marketing e performance" class="logo ">
             </div>
         </div>
-    </main>
+        <div class="col-md-7 d-flex flex-column justify-content-center align-items-center p-4">
+            <div class="profile-info w-75">
+                <img class="rounded-circle img-fluid profile-img small-profile-img" id="profile-img"
+                    src="sua-imagem.jpg" alt="Imagem do perfil do usuário" data-toggle="modal"
+                    data-target="#profileModal">
+                <p><strong>Nome:</strong> <span id="user-name-info"></span></p>
+                <p><strong>Email:</strong> <span id="user-email"></span></p>
+                <p><strong>Telefone:</strong> <span id="user-phone"></span></p>
+            </div>
+            <button id="edit-btn" class="btn btn-primary btn-block mt-3" data-toggle="modal"
+                data-target="#editModal">Editar</button>
+        </div>
+    </div>
+    <!-- Modal imagem do perfil -->
+    <div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="profileModalLabel">Imagem do Perfil</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img class="img-fluid" id="expanded-profile-img" src="" alt="Imagem do perfil do usuário">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal de Edição -->
+    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editModalLabel">Editar Perfil</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="edit-form">
+                        <div class="form-group">
+                            <label for="name">Nome:</label>
+                            <input type="text" id="name" name="name" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Telefone:</label>
+                            <input type="tel" id="phone" name="phone" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="profileImg">URL da Imagem do Perfil:</label>
+                            <input type="text" id="profileImg" name="profileImg" class="form-control">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" id="save-btn" class="btn btn-success">Salvar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

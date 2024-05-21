@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Pridi", serif;
     margin: 0;
     padding: 0;
     background-color: #f0f0f0;
@@ -86,3 +86,73 @@ form input {
         font-size: 1em;
     }
 }
+
+
+
+.gradient-bg {
+    background: linear-gradient(0deg, rgb(8, 63, 191) 0%, rgb(8, 52, 155) 100%);
+    color: white;
+    text-align: center;
+}
+
+.logo-container {
+    margin-top: 20px;
+    margin-right: 500px;
+}
+
+.logo {
+    width: 250px;
+    height: auto;
+    margin: 0 -500px !important;
+}
+
+.profile-info {
+    text-align: left;
+}
+/* ajuste do tamanho da imagem de perfil  */
+.small-profile-img {
+    width: 400px; 
+    height: 300px;
+}
+
+.large-profile-img {
+    width:1200px; 
+    height: 1200px;
+}
+
+/* fonte */
+.pridi-extralight {
+    font-family: "Pridi", serif;
+    font-weight: 200;
+    font-style: normal;
+  }
+  
+  .pridi-light {
+    font-family: "Pridi", serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  .pridi-regular {
+    font-family: "Pridi", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .pridi-medium {
+    font-family: "Pridi", serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  .pridi-semibold {
+    font-family: "Pridi", serif;
+    font-weight: 600;
+    font-style: normal;
+  }
+  
+  .pridi-bold {
+    font-family: "Pridi", serif;
+    font-weight: 700;
+    font-style: normal;
+  }
