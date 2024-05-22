@@ -25,7 +25,7 @@ a {
 .logo {
     width: 250px;
     height: auto;
-    margin: auto; /* Centraliza a logo horizontalmente */
+    margin: auto;
 }
 
 .profile-info {
@@ -123,11 +123,38 @@ button:hover {
 
 #edit-btn {
     border-radius: 20px;
-    transition: all 0.3s ease; /* Transição suave para o efeito hover */
+    transition: all 0.3s ease; 
+    width: 150px; 
+    height: 40px; 
+    font-size: 14px; 
 }
 
-/* Efeito hover */
 #edit-btn:hover {
-    background-color: #03458b; /* Mudar a cor de fundo quando passar o mouse */
-    color: #fff; /* Mudar a cor do texto quando passar o mouse */
+    background-color: #03458b; 
+    color: #000; 
+}
+
+/* Estilização do texto com efeito especial */
+.mry-border-text {
+    letter-spacing: 0;
+    -webkit-text-stroke-width: 2px;
+    -moz-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #fff;
+    -moz-text-stroke-color: #fff;
+    color: transparent!important;
+    font-size: 60px;
+    animation: slideRightToLeft 40s ease infinite;
+}
+/* Definição da animação de balanço */
+@keyframes slideRightToLeft {
+    0% { transform: translateX(0%); } 
+    100% { transform: translateX(30%); }
+}
+
+/* Estilos responsivos para dispositivos móveis */
+@media (max-width: 767px) {
+    .mry-border-text {
+        font-size: 30px; 
+        line-height: 1.2;
+    }
 }

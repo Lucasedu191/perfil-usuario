@@ -50,14 +50,12 @@ document.addEventListener('DOMContentLoaded', () => {
         campoCpf.value = cpf;
     });
 
+    // inclusão da máscara pra adicionar numero de celular
     const campoPhone = document.getElementById('phone')
-
-    
-
     campoPhone.addEventListener("input", () => {
-        let phone = campoPhone.value.replace(/\D/g, "").substring(0, 11); // Remove tudo o que não é dígito e limita a 11 dígitos
-        phone = phone.replace(/^(\d{2})(\d)/g, "($1) $2"); // Coloca parênteses em volta dos dois primeiros dígitos
-        phone = phone.replace(/(\d)(\d{4})$/, "$1-$2"); // Coloca o hífen entre o quinto e o sexto dígitos
+        let phone = campoPhone.value.replace(/\D/g, "").substring(0, 11);
+        phone = phone.replace(/^(\d{2})(\d)/g, "($1) $2");
+        phone = phone.replace(/(\d)(\d{4})$/, "$1-$2");
         
         campoPhone.value = phone;
     });
@@ -77,6 +75,12 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!CpfValido(updatedData.cpf)) {
             console.error('CPF inválido:', CpfValido);
             alert('CPF inválido. Por favor, insira um CPF válido.');
+            return;
+        }
+
+        if (!validarEmail(updatedData.email)) {
+            console.error('E-mail inválido:', updatedData.email);
+            alert('E-mail inválido. Por favor, insira um e-mail válido.');
             return;
         }
         // Validação simples de dados
@@ -138,6 +142,12 @@ document.addEventListener('DOMContentLoaded', () => {
             return false;
         }
         return true;
+    }
+
+    function validarEmail(email) {
+        // Expressão regular para validar o formato do email
+        var re = /\S+@\S+\.\S+/;
+        return re.test(email);
     }
     // expandir o tamanho da imagem ao clicar
     $(document).ready(function(){
