@@ -47,6 +47,7 @@ button {
     color: white;
     border: none;
     cursor: pointer;
+    border-radius: 20px;
 }
 
 button:hover {
@@ -91,6 +92,7 @@ button:hover {
         width: 100%;
     }
 }
+
 /* ajuste estilos do modal */
 .modal-header {
     border-bottom: none;
@@ -121,6 +123,7 @@ button:hover {
     border-radius: 0 0 10px 10px;
 }
 
+/* estilo do botão editar*/
 #edit-btn {
     border-radius: 20px;
     transition: all 0.3s ease; 
@@ -134,7 +137,13 @@ button:hover {
     color: #000; 
 }
 
-/* Estilização do texto com efeito especial */
+.btn-secondary{
+    border-radius: 20px;
+}
+.btn-success{
+    border-radius: 20px;
+}
+/* Estilização do texto com efeito de movimentação */
 .mry-border-text {
     letter-spacing: 0;
     -webkit-text-stroke-width: 2px;
@@ -145,16 +154,23 @@ button:hover {
     font-size: 60px;
     animation: slideRightToLeft 40s ease infinite;
 }
-/* Definição da animação de balanço */
+
+/* Definição da animação */
 @keyframes slideRightToLeft {
     0% { transform: translateX(0%); } 
     100% { transform: translateX(30%); }
 }
 
-/* Estilos responsivos para dispositivos móveis */
+/* Estilos responsivos para dispositivos móveis e tablet */
 @media (max-width: 767px) {
     .mry-border-text {
         font-size: 30px; 
         line-height: 1.2;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .mry-border-text {
+        animation: none;
     }
 }

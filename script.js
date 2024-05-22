@@ -39,9 +39,9 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .catch(error => console.error('Erro ao buscar dados:', error));
     });
+    
     // inclusão da máscara ao digitar o CPF no campo
     const campoCpf = document.getElementById('cpf');
-
     campoCpf.addEventListener("input", () => {
         let cpf = campoCpf.value.replace(/\D/g, "");
         cpf = cpf.replace(/(\d{3})(\d)/, "$1.$2");
@@ -70,7 +70,6 @@ document.addEventListener('DOMContentLoaded', () => {
             phone: document.getElementById('phone').value,
             profileImg: document.getElementById('profileImg').value
         };
-        console.log('Dados atualizados antes de validação:', updatedData);
 
         if (!CpfValido(updatedData.cpf)) {
             console.error('CPF inválido:', CpfValido);
@@ -106,7 +105,8 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('Por favor, preencha todos os campos.');
         }
     });
-    // Realiza a validação ao preencher o campo 
+
+    // Realiza a validação ao preencher o campo CPF
     function CpfValido(cpf) {
         cpf = cpf.replace(/\D/g, '');
 
@@ -143,9 +143,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         return true;
     }
-
+    // validação do campo email
     function validarEmail(email) {
-        // Expressão regular para validar o formato do email
         var re = /\S+@\S+\.\S+/;
         return re.test(email);
     }
