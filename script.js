@@ -60,6 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
             phone: document.getElementById('phone').value,
             profileImg: document.getElementById('profileImg').value
         };
+        console.log('Dados atualizados antes de validação:', updatedData);
 
         if (!CpfValido(updatedData.cpf)) {
             console.error('CPF inválido:', CpfValido);
@@ -85,12 +86,23 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .catch(error => console.error('Erro:', error));
         } else {
+            console.error('Campos obrigatórios não preenchidos:', updatedData);
             alert('Por favor, preencha todos os campos.');
         }
     });
+    // Realiza a validação ao preencher o campo 
     function CpfValido(cpf) {
-        console.log('Iniciando validação de CPF:', cpf);
-        if (cpf.length !== 11 || /^(\d)\1{10}$/.test(cpf)) return false;
+        cpf = cpf.replace(/\D/g, '');
+
+        if (cpf.length !== 11) {
+            console.error('CPF com tamanho inválido:', cpf);
+            return false;
+        }
+
+        if (/^(\d)\1{10}$/.test(cpf)) {
+            console.error('CPF com sequência repetida:', cpf);
+            return false;
+        }
 
         let soma = 0;
         let resto;
@@ -104,14 +116,15 @@ document.addEventListener('DOMContentLoaded', () => {
         if (resto !== parseInt(cpf.substring(9, 10))) return false;
 
         soma = 0;
+        
         for (let i = 1; i <= 10; i++) {
             soma += parseInt(cpf.substring(i - 1, i)) * (12 - i);
         }
-
         resto = (soma * 10) % 11;
         if (resto === 10 || resto === 11) resto = 0;
-        if (resto !== parseInt(cpf.substring(10, 11))) return false;
-
+        if (resto !== parseInt(cpf.substring(10, 11))) {
+            return false;
+        }
         return true;
     }
     // expandir o tamanho da imagem ao clicar
