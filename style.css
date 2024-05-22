@@ -19,29 +19,18 @@ p{
     color: #e6e6e6;
 }
 a {
-    color: white; 
-  }
-.profile-container {
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+    color: white;
 }
 
-.profile-picture {
-    text-align: center;
-}
-
-.profile-picture img {
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
+.logo {
+    width: 250px;
+    height: auto;
+    margin: auto; /* Centraliza a logo horizontalmente */
 }
 
 .profile-info {
     margin-top: 20px;
+    text-align: left;
 }
 
 .profile-info p {
@@ -64,108 +53,19 @@ button:hover {
     background-color: #45a049;
 }
 
-.hidden {
-    display: none;
-}
-
-form {
-    margin-top: 20px;
-}
-
-form label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-form input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-@media (max-width: 600px) {
-    .profile-container {
-        padding: 10px;
-    }
-
-    .profile-info p {
-        font-size: 1em;
-    }
-}
-
-
-
-.gradient-bg {
-    
-    color: white;
-    text-align: center;
-}
-
-.logo-container {
-    margin-top: 20px;
-    margin-right: 500px;
-}
-
-.logo {
-    width: 250px;
-    height: auto;
-    margin: 0 -500px !important;
-}
-
-.profile-info {
-    text-align: left;
-}
-/* ajuste do tamanho da imagem de perfil  */
 .small-profile-img {
-    width: 400px; 
-    height: 300px;
+    max-width: 300px;
+    border-radius: 5%;
+    cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
 .large-profile-img {
-    width:1200px; 
-    height: 1200px;
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
 }
 
-/* fonte */
-.pridi-extralight {
-    font-family: "Pridi", serif;
-    font-weight: 200;
-    font-style: normal;
-  }
-  
-  .pridi-light {
-    font-family: "Pridi", serif;
-    font-weight: 300;
-    font-style: normal;
-  }
-  
-  .pridi-regular {
-    font-family: "Pridi", serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-  
-  .pridi-medium {
-    font-family: "Pridi", serif;
-    font-weight: 500;
-    font-style: normal;
-  }
-  
-  .pridi-semibold {
-    font-family: "Pridi", serif;
-    font-weight: 600;
-    font-style: normal;
-  }
-  
-  .pridi-bold {
-    font-family: "Pridi", serif;
-    font-weight: 700;
-    font-style: normal;
-  }
- 
 /* Estilo para os ícones */
 .social-icon {
     color: white; 
@@ -176,4 +76,58 @@ form input {
 
 .social-icon:hover {
     color: #ccc; 
+}
+
+@media (max-width: 767.98px) {
+    .logo {
+        width: 50%;
+    }
+
+    .profile-info p {
+        font-size: 1em;
+    }
+
+    .btn-block {
+        width: 100%;
+    }
+}
+/* ajuste estilos do modal */
+.modal-header {
+    border-bottom: none;
+    background-color: #222; 
+    color: #fff;
+    padding: 20px;
+    
+}
+
+.modal-body {
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    border-radius: 0 0 0px 0px;
+}
+
+.modal-content {
+    background-color: transparent;
+    border: none;
+    border-radius: 0 0 10px 10px;
+}
+
+.modal-footer {
+    text-align: center;
+    background-color: #333;
+    padding: 20px;
+    border-radius: 0 0 10px 10px;
+}
+
+#edit-btn {
+    border-radius: 20px;
+    transition: all 0.3s ease; /* Transição suave para o efeito hover */
+}
+
+/* Efeito hover */
+#edit-btn:hover {
+    background-color: #03458b; /* Mudar a cor de fundo quando passar o mouse */
+    color: #fff; /* Mudar a cor do texto quando passar o mouse */
 }

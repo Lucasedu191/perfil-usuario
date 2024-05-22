@@ -50,6 +50,18 @@ document.addEventListener('DOMContentLoaded', () => {
         campoCpf.value = cpf;
     });
 
+    const campoPhone = document.getElementById('phone')
+
+    
+
+    campoPhone.addEventListener("input", () => {
+        let phone = campoPhone.value.replace(/\D/g, "").substring(0, 11); // Remove tudo o que não é dígito e limita a 11 dígitos
+        phone = phone.replace(/^(\d{2})(\d)/g, "($1) $2"); // Coloca parênteses em volta dos dois primeiros dígitos
+        phone = phone.replace(/(\d)(\d{4})$/, "$1-$2"); // Coloca o hífen entre o quinto e o sexto dígitos
+        
+        campoPhone.value = phone;
+    });
+
     // Salvar as alterações e enviar para a API fictícia
     saveBtn.addEventListener('click', () => {
         
@@ -134,6 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
             $('#expanded-profile-img').attr('src', imgSrc);
         });
     });
+    
 });
 
 
